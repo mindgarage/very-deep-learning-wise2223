@@ -48,7 +48,8 @@ size is often referred to as _subsample size_, or _filter size_. Then,
 for each section, we only return the biggest value present in that section.
 For example, in the image below, the sections are of size $(2,2)$:
 
-https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-10-at-3-38-39-am.png?w=988
+
+![Max Pooling operation with a filter of size (2,2) (adapted from http://linkis.com/ujjwalkarn.me/2016/0/pRidi)](max_pooling.png)
 
 It is easy to notice that the output image will have a smaller size than the
 input. In this case, because the filter size is $(2,2)$, the final size of the
@@ -93,9 +94,36 @@ k =
 \end{bmatrix}
 $$
 
+_Solution_:
+
+$$
+k =
+\begin{bmatrix}
+7   & 10  & 10  & 6   \\
+12  & 18  & 17  & 10  \\
+12  & 19  & 18  & 10  \\
+8   & 12  & 12  & 7   \\
+\end{bmatrix}
+$$
+
  2) Then calculate the output of the Rectified Linear Unit;
 
+_Solution_:
+
+In this case, the matrix doesn't change, because all values are positive
+
  3) Then apply Max Pooling to the resulting matrix;
+
+_Solution_:
+
+$$
+I = 
+\begin{bmatrix}
+18  & 17  \\
+19  & 18  \\
+\end{bmatrix}
+$$
+
 
  4) Now flatten the resulting image by putting all the rows of the image in
     one same line. For example, the image below:
@@ -111,26 +139,38 @@ $$
 &nbsp; will become:
 
 $$
-I_{flattened} = [0, 1, 2, 3]
+I_{flattened} = [0, 1, 2, 3]^T
+$$
+
+_Solution_:
+
+$$
+I_{flattened} = [18, 17, 19, 18]^T
 $$
 
  5) Calculate the output of a Fully Connected layer. Use the following $W$:
 
 $$
-k =
+W =
 \begin{bmatrix}
-1  & 2  \\
-3  & 4  \\
-5  & 6  \\
-7  & 8  \\
+1  & 2  & 3  & 4  \\
+5  & 6  & 7  & 8  \\
 \end{bmatrix}
 $$
 
+_Solution_:
+
+$$
+k =
+\begin{bmatrix}
+1 \times 18  + 2 \times 17  + 3 \times 19  + 4 \times 18 = 181  \\
+5 \times 18  + 6 \times 17  + 7 \times 19  + 8 \times 18 = 469  \\
+\end{bmatrix}
+$$
+
+
  6) Finally, you will have 2 outputs. It is common to apply a softmax operation
-    over these outputs. In our case, since we have only two classes, we take
-    that with the biggest value.
-
-
-
+    over these outputs. In our case, since we have only two classes, just take
+    the bigger one.
 
 
