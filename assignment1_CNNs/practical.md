@@ -10,7 +10,7 @@ This task is meant to get you acquainted with one of the Deep Learning framework
 The main goal of this task is to build a simple Convolutional Neural Network and train it on the MNIST dataset.
 
 ### Task Description
-**Convolutional Neural Networks** (Conv Nets) have led to a paradigm shift in the field of Computer Vision.
+**Convolutional Neural Networks** (Conv Nets, a.k.a. CNNs) have led to a paradigm shift in the field of Computer Vision.
 While popular Conv Net architectures (e.g., Alex Net, LeNet, ResNet, etc.) are generally used in vision problems directly,
  we still need to come up with our own architectures to deal with very specific problems.
 
