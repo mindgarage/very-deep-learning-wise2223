@@ -59,7 +59,7 @@ This task will make you familiar with some popular Conv Net architectures, which
 **1. ResNet**
 **2. InceptionV3**
 
-Along with that, you will get a first hand experience on finetuning Deep Learning models.
+Along with that, you will get a first-hand experience on finetuning Deep Learning models.
 
 ### Task Description
 Train a **ResNet** and an **InceptionV3 Net** on a dataset of **Cats and Dogs** 
@@ -72,8 +72,7 @@ Train a **ResNet** and an **InceptionV3 Net** on a dataset of **Cats and Dogs**
 3. Use **Binary Cross Entropy** as the loss function
 
 #### Resources
-Thanks to Keras, you will not have to develop everything from scratch. You can use pretrained models that Keras provides 
-and finetune them with your datasets.
+Thanks to Keras, you will not have to develop everything from scratch. You can use pre-trained models that Keras provides and finetune them with your datasets.
 
 1. [Keras Applications](https://keras.io/applications/)
 2. [Stratification](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)
