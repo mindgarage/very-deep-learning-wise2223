@@ -14,6 +14,7 @@ Read the following two blog posts:
 
  &nbsp; &nbsp; &nbsp;   [https://vaulttech.github.io/2017/08/28/convolutions-and-neural-networks/](https://vaulttech.github.io/2017/08/28/convolutions-and-neural-networks/)
 
+
 ### Task
 
 Now consider the following image $I$, represented as a matrix:
@@ -40,14 +41,14 @@ k =
 $$
 
 Calculate a _same_ convolution $I \ast k$ as described in `Convolutions and
-Neural Networks` above.
+Neural Networks` above. Use a _stride_ of $1$.
 
 ## 1.2 Max Pooling calculation
 
 ### Theoretical Background
 
 Max Pooling divides the input image in several sections of a given size. This
-size is often referred to as _subsample size_, or _filter size_. Then,
+size is generally referred to as _filter size_. Then,
 for each section, we only return the biggest value present in that section.
 For example, in the image below, the sections are of size $(2,2)$:
 
@@ -59,10 +60,15 @@ input. In this case, because the filter size is $(2,2)$, the final size of the
 image half of the original image. If it were $(3,3)$, then the final size
 would be one third of the original image.
 
+When the filter size in both dimensions is the same, it is common to refer to it
+using just one number. For example, `filter_size = 3` would mean that the filter
+size is 3 both horizontally and vertically.
+
 
 ### Task
 
-Given the image $I$ below, apply Max Pooling with a filter size of $(3,3)$:
+Given the image $I$ below, represented as a matrix, apply Max Pooling with a
+filter size of $3$. Use `stride = 3`:
 
 $$
 I = 
