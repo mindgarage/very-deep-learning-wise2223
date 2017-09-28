@@ -1,6 +1,7 @@
 #2. Programming Tasks
 
 ## Prerequisites
+
 1. **Keras:** [https://keras.io/](https://keras.io/)
 2. **Python:** 2.7+
 
@@ -19,21 +20,21 @@ For this part of the task you need to develop the following Conv Net architectur
 
 #### Layers
 
-**1. Conv Layer:** num_filters=64,  kernel_size=(3, 3), activation=relu, padding=valid, strides=(2, 2)
+**1. Conv Layer:** `num_filters=64`,  `kernel_size=(3, 3)`, `activation=relu`, `padding=valid`, `strides=(2, 2)`
 
-**2. Conv Layer:** num_filters=32,  kernel_size=(2, 2), activation=relu, padding=same, strides=(1, 1)
+**2. Conv Layer:** `num_filters=32`,  `kernel_size=(2, 2)`, `activation=relu`, `padding=same`, `strides=(1, 1)`
 
-**3. Max Pool Layer:** pool_size=(2, 2)
+**3. Max Pool Layer:** `pool_size=(2, 2)`
 
-**4. Dropout:** rate=0.35 (Fraction of the input units to drop)
+**4. Dropout:** `rate=0.35` (Fraction of the input units to drop)
 
 **5. Flatten**
 
-**6. Dense:** num_units=256, activation=tanh
+**6. Dense:** `num_units=256`, `activation=tanh`
 
-**7. Dropout:** rate=0.5 (Fraction of the input units to drop)
+**7. Dropout:** `rate=0.5` (Fraction of the input units to drop)
 
-**8. Dense:** num_units=10, activation=softmax
+**8. Dense:** `num_units=10`, `activation=softmax`
 
 ### Part 2
 
@@ -49,8 +50,14 @@ Use **categorical Cross Entropy** as the loss function.
 3. Stochastic Gradient Descent
 
 #### Resources
-1. [Keras CNN MNIST Example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py)
-2. [Keras Optimizers](https://keras.io/optimizers/)
+
+##### 1. Keras CNN MNIST Example
+
+  &nbsp; &nbsp; &nbsp;  [https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py)
+
+##### 2. Keras Optimizers
+
+  &nbsp; &nbsp; &nbsp;  [https://keras.io/optimizers/](https://keras.io/optimizers/)
 
 
 
