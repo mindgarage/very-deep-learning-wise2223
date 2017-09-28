@@ -2,12 +2,13 @@
 
 ## Prerequisites
 
-1. **Keras:** [https://keras.io/](https://keras.io/)
+1. **PyTorch:** [http://pytorch.org/](http://pytorch.org/)
 2. **Python:** 2.7+
 
 ## 2.1 Build a Convolutional Neural Network
 
-This task is meant to get you acquainted with one of the Deep Learning frameworks called Keras.
+This task is meant to get you acquainted with one of the Deep Learning frameworks called PyTorch
+(the Python version of the Torch Framework, originally for the Lua language).
 The main goal of this task is to build a simple Convolutional Neural Network and train it on the MNIST dataset.
 
 ### Task Description
@@ -16,7 +17,7 @@ While popular Conv Net architectures (e.g., Alex Net, LeNet, ResNet, etc.) are g
  we still need to come up with our own architectures to deal with very specific problems.
 
 ### Part 1
-For this part of the task you need to develop the following Conv Net architecture using Keras:
+For this part of the task you need to develop the following Conv Net architecture using PyTorch:
 
 #### Layers
 
@@ -51,13 +52,13 @@ Use **categorical Cross Entropy** as the loss function.
 
 #### Resources
 
-##### 1. Keras CNN MNIST Example
+##### 1. PyTorch CNN MNIST Example
 
-  &nbsp; &nbsp; &nbsp;  [https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py)
+  &nbsp; &nbsp; &nbsp;  [https://github.com/pytorch/examples/tree/master/mnist](https://github.com/pytorch/examples/tree/master/mnist)
 
-##### 2. Keras Optimizers
+##### 2. PyTorch Optimizers
 
-  &nbsp; &nbsp; &nbsp;  [https://keras.io/optimizers/](https://keras.io/optimizers/)
+  &nbsp; &nbsp; &nbsp;  [http://pytorch.org/docs/master/optim.html](http://pytorch.org/docs/master/optim.html)
 
 
 
