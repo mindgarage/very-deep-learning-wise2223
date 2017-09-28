@@ -16,12 +16,10 @@ Now consider the following image $I$, represented as a matrix:
 $$
 I = 
 \begin{bmatrix}
-0  & 0  & 0  & 0  & 0  & 0 \\
-0  & 1  & 1  & 1  & 1  & 0 \\
-0  & 1  & 2  & 2  & 1  & 0 \\
-0  & 1  & 2  & 2  & 1  & 0 \\
-0  & 1  & 1  & 1  & 1  & 0 \\
-0  & 0  & 0  & 0  & 0  & 0 \\
+ 1  &  1  &  1  &  1 \\
+ 1  &  2  &  2  &  1 \\
+-1  & -2  & -2  & -1 \\
+-1  & -1  & -1  & -1 \\
 \end{bmatrix}
 $$
 
@@ -30,9 +28,9 @@ And the following kernel $k$, represented as a matrix:
 $$
 k =
 \begin{bmatrix}
-1  & 1  & 1  \\
-2  & 2  & 1  \\
-1  & 2  & 1  \\
+1  &  1  & 1  \\
+2  &  2  & 1  \\
+1  & -2  & 1  \\
 \end{bmatrix}
 $$
 
@@ -61,6 +59,19 @@ would be one third of the original image.
 
 Given the image $I$ below, apply Max Pooling with a filter size of $(3,3)$:
 
+$$
+I = 
+\begin{bmatrix}
+0  & 0  & 0  & 0  & 0  & 0 \\
+0  & 1  & 1  & 1  & 1  & 0 \\
+0  & 6  & 2  & 3  & 1  & 0 \\
+0  & -1  & 2  & -2  & -1  & 0 \\
+0  & -1  & -1  & -1  & 1  & 0 \\
+0  & 0  & 0  & 0  & 0  & 0 \\
+\end{bmatrix}
+$$
+
+
 ## 1.3 A Neural Network example
 
 The Convolution and the Max Pooling operation above can be combined to build
@@ -79,8 +90,8 @@ I =
 0  & 0  & 0  & 0  & 0  & 0 \\
 0  & 1  & 1  & 1  & 1  & 0 \\
 0  & 1  & 2  & 2  & 1  & 0 \\
-0  & 1  & 2  & 2  & 1  & 0 \\
-0  & 1  & 1  & 1  & 1  & 0 \\
+0  & -1  & -2  & -2  & -1  & 0 \\
+0  & -1  & -1  & -1  & -1  & 0 \\
 0  & 0  & 0  & 0  & 0  & 0 \\
 \end{bmatrix}
 $$
@@ -90,40 +101,13 @@ k =
 \begin{bmatrix}
 1  & 1  & 1  \\
 2  & 2  & 1  \\
-1  & 2  & 1  \\
-\end{bmatrix}
-$$
-
-_Solution_:
-
-$$
-k =
-\begin{bmatrix}
-7   & 10  & 10  & 6   \\
-12  & 18  & 17  & 10  \\
-12  & 19  & 18  & 10  \\
-8   & 12  & 12  & 7   \\
+1  & -2  & 1  \\
 \end{bmatrix}
 $$
 
  2) Then calculate the output of the Rectified Linear Unit;
 
-_Solution_:
-
-In this case, the matrix doesn't change, because all values are positive
-
  3) Then apply Max Pooling to the resulting matrix;
-
-_Solution_:
-
-$$
-I = 
-\begin{bmatrix}
-18  & 17  \\
-19  & 18  \\
-\end{bmatrix}
-$$
-
 
  4) Now flatten the resulting image by putting all the rows of the image in
     one same line. For example, the image below:
@@ -142,12 +126,6 @@ $$
 I_{flattened} = [0, 1, 2, 3]^T
 $$
 
-_Solution_:
-
-$$
-I_{flattened} = [18, 17, 19, 18]^T
-$$
-
  5) Calculate the output of a Fully Connected layer. Use the following $W$:
 
 $$
@@ -157,17 +135,6 @@ W =
 5  & 6  & 7  & 8  \\
 \end{bmatrix}
 $$
-
-_Solution_:
-
-$$
-k =
-\begin{bmatrix}
-1 \times 18  + 2 \times 17  + 3 \times 19  + 4 \times 18 = 181  \\
-5 \times 18  + 6 \times 17  + 7 \times 19  + 8 \times 18 = 469  \\
-\end{bmatrix}
-$$
-
 
  6) Finally, you will have 2 outputs. It is common to apply a softmax operation
     over these outputs. In our case, since we have only two classes, just take
