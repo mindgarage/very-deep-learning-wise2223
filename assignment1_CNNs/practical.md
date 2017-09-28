@@ -17,7 +17,7 @@ While popular Conv Net architectures (e.g., Alex Net, LeNet, ResNet, etc.) are g
  we still need to come up with our own architectures to deal with very specific problems.
 
 ### Part 1
-For this part of the task you need to develop the following Conv Net architecture using PyTorch:
+For this part of the task you need to develop the following Conv Net architecture using PyTorch (the layers need to be implemented in the order specified):
 
 #### Layers
 
