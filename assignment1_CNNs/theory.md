@@ -92,8 +92,8 @@ At the end, it is common to have a fully connected layer followed by a
 softmax. In the exercise below you have to calculate by hand each one of the
 steps.
 
- 1) First, calculate a convolution between the image $I$ and the kernel $k$:
-    (these are the same calculated above)
+ 1) First, calculate a convolution between the image $I$ and the kernel $k$.
+    Use `stride = 1`:
 
 $$
 I = 
@@ -118,7 +118,7 @@ $$
 
  2) Then calculate the output of the Rectified Linear Unit;
 
- 3) Then apply Max Pooling to the resulting matrix;
+ 3) Then apply Max Pooling to the resulting matrix (use `stride = 3`);
 
  4) Now flatten the resulting image by putting all the rows of the image in
     one same line. For example, the image below:
