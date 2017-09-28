@@ -25,7 +25,7 @@ For this part of the task you need to develop the following Conv Net architectur
 
 **2. Conv Layer:** `num_filters=32`,  `kernel_size=(2, 2)`, `activation=relu`, `padding=same`, `strides=(1, 1)`
 
-**3. Max Pool Layer:** `pool_size=(2, 2)`
+**3. Max Pool Layer:** `pool_size=(2, 2)`, `strides=(1, 1)`
 
 **4. Dropout:** `rate=0.35` (Fraction of the input units to drop)
 
