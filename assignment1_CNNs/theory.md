@@ -6,8 +6,13 @@
 
 Read the following two blog posts:
 
- * [What are convolutions?](https://vaulttech.github.io/2017/08/12/what-are-convolutions/)
- * [Convolutions and Neural Networks](https://vaulttech.github.io/2017/08/28/convolutions-and-neural-networks/)
+#### _What are convolutions?_:
+
+ &nbsp; &nbsp; &nbsp;   [https://vaulttech.github.io/2017/08/12/what-are-convolutions/](https://vaulttech.github.io/2017/08/12/what-are-convolutions/)
+
+#### _Convolutions and Neural Networks_:
+
+ &nbsp; &nbsp; &nbsp;   [https://vaulttech.github.io/2017/08/28/convolutions-and-neural-networks/](https://vaulttech.github.io/2017/08/28/convolutions-and-neural-networks/)
 
 ### Task
 
