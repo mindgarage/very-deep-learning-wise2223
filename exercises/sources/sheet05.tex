@@ -1,0 +1,170 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+
+% for matlab code
+% bw = blackwhite - optimized for print, otherwise source is colored
+\usepackage[framed,numbered,bw]{styles/exercise}
+\usepackage{hyperref}
+
+% for other code
+%\usepackage{listings}
+
+\setlength{\parindent}{0em}
+
+% set section in CM
+\setkomafont{section}{\normalfont\bfseries\Large}
+
+\newcommand{\mytitle}[1]{{\noindent\Large\textbf{#1}}}
+\newcommand{\mysection}[1]{\textbf{\section*{#1}}}
+\newcommand{\mysubsection}[2]{\romannumeral #1) #2}
+
+
+%===================================
+\begin{document}
+
+\noindent\textbf{Very Deep Learning} \hfill \textbf{Technische Universität Kaiserslautern} \\
+WS 2022/23 \hfill Dr. Muhammad Zeshan Afzal \\
+
+\mytitle{Exercise 5 - Semantic Segmentation and Object Detection }
+
+\textbf{Deadline: 07.01.2023 \hfill Total Marks: 30}
+
+
+\section*{Submission}
+
+\begin{itemize}
+    \item Submissions through OLAT. Only one group member needs to submit it.
+    \item Your submission should contain a PDF with the solutions to the exercise questions (and a python notebook file) zipped together in a single file.
+    \item Include the group number along with the names and matriculation numbers of all group members on the PDF.
+    \item For the Jupyter notebook, please save them with the outputs of your code displayed.
+\end{itemize}
+
+%===================================
+\mysection{5.1. Semantic Segmentation\hfill[3 + 3 + 4 = 10]}
+
+\mysubsection{1}{ Applying transpose convolution on a $2\times2$ encoded feature map which needs to be upsampled to a $3\times3$ feature map. Kernel size is $2\times2$, stride is 1 with zero padding}
+
+Given the following $2\times2$ input feature map:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+5 & 9 \\
+\hline
+0 & 3 \\ 
+\hline
+\end{tabular}
+\end{table}
+
+and the Final output feature map of size $3 \times 3$:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+ &  &  \\
+ \hline
+ &  &   \\
+ \hline
+ &  &   \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+% %===================================
+\mysubsection{2}{Describe the concept of transpose convolution. Suppose 1D input of three elements [a,b,c] and filter with 4 elements [w, x, y, z], perform transpose convolution.}
+
+\newpage
+\mysubsection{3}{In this part, we will apply the most widely used upsampling techniques.}
+
+Given the following $2\times2$ input feature map:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+8 & 16 \\
+\hline
+24 & 32 \\ 
+\hline
+\end{tabular}
+\end{table}
+
+and the Final output feature map of size $4 \times 4$:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+ &  &  &  \\
+ \hline
+ &  &  &   \\
+ \hline
+ &  &  &   \\ 
+ \hline
+ &  &  &   \\
+\hline
+\end{tabular}
+\end{table}
+
+Apply the following up-sampling techniques to convert the given $2\times2$ feature map into a $4\times4$ output.
+\begin{enumerate}
+    \item Nearest Neighbor
+    \item Bi-Linear Interpolation
+    \item Bed Of Nails
+    \item Max-Unpooling : For Max-Unpooling, the saved indices are marked with \textit{x }in the following matrix:
+ \begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+ &  &  \textit{x }&  \\
+ \hline
+ &  \textit{x }&  &   \\
+ \hline
+ &  &  &\textit{x }\\ 
+ \hline
+ \textit{x }&  &  &   \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{enumerate}
+
+
+
+
+%===================================
+\mysection{5.2. Object Detection \hfill[30]}
+
+In this exercise, we will build a two-stage detector called Mask R-CNN. In order to set up everything and run the code on the Google Collab, do the following:
+\begin{itemize}
+    \item Download the dataset called \texttt{coco\_subset} from this \href{https://drive.google.com/drive/folders/107wKltnpX_hGD0YHloqM0PT0DdQLFgqK?usp=sharing}{Link}. It contains 2 directories (\texttt{annotations} and \texttt{train2017}).
+    \item Create a folder, named \texttt{Exercise\_5} and upload the python notebook, \texttt{mrcnn} and coco\_subset directories in this folder. Now, your folder on google drive, Exercise\_5 should have two directories (\texttt{coco\_subset} and \texttt{mrcnn}) and one python notebook.
+    \item Make sure that the folder \texttt{Exercise\_5} is created at the home location in Google drive. Otherwise, you have to modify the paths in the notebook accordingly.
+\end{itemize}
+ 
+
+Follow the instructions in the Jupyter notebook 
+\texttt{Task\_5.2\_two\_stage\_detector.ipynb} to implement Mask R-CNN using PyTorch. Your task is to fill in the missing code annotated with \texttt{TODO} tags in the comments. The following are the required missing components in the notebook:
+\begin{enumerate}
+    \item Non Maximum Suppression
+    \item Defining RPN
+    \item RPN Forward Pass
+    \item Classification and Box regression loss function 
+    \item Mask loss function
+    \item Defining R-CNN 
+    \item R-CNN Forward Pass
+\end{enumerate}
+
+
+Good luck!
+
+\end{document}
